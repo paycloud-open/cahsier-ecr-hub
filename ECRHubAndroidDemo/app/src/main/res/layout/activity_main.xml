@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/init"
+        android:text="初始化"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+    <Button
+        android:id="@+id/conncect"
+        android:text="连接"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+
+    <Button
+        android:id="@+id/sendMessag"
+        android:text="发送数据"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+</LinearLayout>

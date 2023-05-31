@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="psamcardslot">
+        <item>PsamSlot-1</item>
+        <item>PsamSlot-2</item>
+    </string-array>
+
+    <string-array name="gray">
+        <item>Gray：1</item>
+        <item>Gray：2</item>
+        <item>Gray：3</item>
+        <item>Gray：4</item>
+        <item>Gray：5</item>
+    </string-array>
+</resources>

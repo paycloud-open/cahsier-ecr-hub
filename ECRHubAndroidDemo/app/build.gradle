@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+def WPOS_APP_VERSION_CODE = "${new Date().format('yyMMdd')}".toInteger()
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.smartpos.demo"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "SDKDemo_1.12_00a_"+WPOS_APP_VERSION_CODE.toString()+"00"
+        setProperty("archivesBaseName", "SmartPosSdkDemo")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //在这里修改apk文件名
+                outputFileName = versionName + ".apk"
+            }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    api 'com.aill:AndroidSerialPort:1.0.8'
+    api 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+}
